@@ -11,7 +11,7 @@ router.route('/').post((req,res) => {
 
     const file = req.files.file;
 
-    file.mv(`./${file.name}`, err => {
+    file.mv(`${__dirname}/${file.name}`, err => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
